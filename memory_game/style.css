@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background: url(images/memory-bg.jpg) no-repeat center center/cover;
+    background-size: cover;
+    height: 100vh;
+}
+.container{
+    box-sizing: border-box;
+    width: 26rem;
+    padding: 3rem 3rem;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 1rem;
+}
+.play-container{
+    width: 100%;
+    display: grid;
+}
