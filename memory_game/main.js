@@ -110,14 +110,76 @@ const matrices = (cardVal, size = 4) => {
         </div>`;
     }
     playContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+
+    allCard = document.querySelectorAll('.card-container');
+    allCard.forEach((card) => {
+        card.addEventListener('click', () => {
+            if(!card.classList.contains('matched')){
+                card.classList.add('flipped');
+                if(!firstCard){
+                    firstCard = card;
+                    firstCardVal = card.getAttribute('data-card-value');
+                }
+                else{
+                    count_();
+                    nextCard = card;
+                    let nextCardVal = card.getAttribute('data-card-value');
+                    if(firstCardVal == nextCardVal){
+                        firstCard.classList.add('matched');
+                        nextCard.classList.add('matched');
+                        firstCard = false;
+                        win_ +=1;
+    
+                        if(win_ == Math.floor(cardVal.length / 2)){
+                            seeResult.innerHTML = `<h2>YOU WON!</h2>`;
+                            pauseGame();
+                        }
+                    }
+                        else{
+                            let[tempFirst, tempNext] = [firstCard, nextCard];
+                            firstCard =false;
+                            nextCard = false;
+                            let delay = setTimeout(()=>{
+                                tempFirst.classList.remove('flipped');
+                                tempNext.classList.remove('flipped');
+                            }, 500);
+                        }
+                }  
+            }
+            
+        });
+    });
 };
+
+startBtn.addEventListener('click', () => {
+    moves_ = 0;
+    seconds = 0;
+    minutes =0;
+
+    run.classList.add('hide');
+    pauseBtn.classList.remove('hide');
+    startBtn.classList.add('hide');
+
+    interval = setInterval(startTime, 1000);
+
+    toMove.innerHTML = `<span>You moves: </span> ${moves_}`;
+    initial_();
+});
+
+pauseBtn.addEventListener('click',(pauseGame = () =>{
+    run.classList.remove('hide');
+    pauseBtn.classList.add('hide');
+    startBtn.classList.remove('hide');
+    clearInterval(interval);
+}));
 
 const initial_ = () => {
     seeResult.innerText = '';
     win_ = 0;
 
     let cardVal = random_();
-    console.log(cardVal)
     matrices(cardVal);
 };
-initial_();
+
+
+
