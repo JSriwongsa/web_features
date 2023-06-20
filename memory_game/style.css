@@ -10,10 +10,10 @@ body{
     height: 100vh;
 }
 .container{
-    box-sizing: border-box;
-    width: 26rem;
+    box-sizing: content-box;
+    width: 24rem;
     padding: 3rem 3rem;
-    background-color: white;
+    background-color: whitesmoke;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -23,4 +23,46 @@ body{
 .play-container{
     width: 100%;
     display: grid;
+    gap: 1rem;
 }
+.card-container{
+    position: relative;
+    width: 5.5rem;
+    height: 5.5rem;
+    cursor: pointer;
+}
+.card-container.flipped.card-before{
+    transform: rotateY(180deg);
+}
+.card-container.flipped.card-after{
+    transform: rotateY(0deg);
+}
+.card-before{
+    font-size: 3rem;
+    font-weight: 600;
+    background-color: pink;
+}
+.card-after{
+    background-color: beige;
+    transform: rotateY(180deg);
+}
+.card-before, .card-after{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-out;
+    border: 2px solid rgb(253, 170, 184);
+    backface-visibility: hidden;
+}
+.run-container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

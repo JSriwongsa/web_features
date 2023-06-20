@@ -57,7 +57,7 @@ const seeResult = document.getElementById('result');
 const playContainer = document.querySelector('.play-container');
 const run = document.querySelector('.run-container');
 
-let card;
+let allCard;
 let interval;
 let firstCard = false;
 let nextCard = false;
@@ -94,3 +94,30 @@ const random_ = (size = 4) => {
     }
     return cardVal;
 };
+
+const matrices = (cardVal, size = 4) => {
+    playContainer.innerHTML = '';
+    cardVal = [...cardVal, ...cardVal];
+
+    cardVal.sort(() => Math.random() - 0.5);
+    for(let x = 0; x < size*size; x++){
+
+        playContainer.innerHTML += `
+        <div class='card-container' data-card-value = "${cardVal[x].name}"> 
+        <div class='card-before'>?</div> 
+        <div class='card-after'>
+        <img src ='${cardVal [x].img}' classs = 'image'/></div> 
+        </div>`;
+    }
+    playContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+};
+
+const initial_ = () => {
+    seeResult.innerText = '';
+    win_ = 0;
+
+    let cardVal = random_();
+    console.log(cardVal)
+    matrices(cardVal);
+};
+initial_();
