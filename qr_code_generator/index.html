@@ -9,7 +9,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="wrapper"></div>
+    <div class="container">
+        <input type="text" placeholder="Enter your website or text" id="userinput">
+        <div class="choices">
+            <select name="" id="" class="size-choices">
+                <option value="100" selected>100 x 100</option>
+                <option value="200">200 x 200</option>
+                <option value="350">350 x 350</option>
+                <option value="450">450 x 450</option>
+                <option value="500">500 x 500</option>
+            </select>
+            <input type="color" class="color-input" id="qr-code-color">
+            <input type="color" class="color-input" id="qr-code-color-1">
+        </div>
+        <div class="qr-code-btn">
+            <button id="submit" disabled>Generate</button>
+            <a href="#" id="download">Download</a>
+        </div>
+        <div class="box-container"></div>
+    </div>
     
 
     

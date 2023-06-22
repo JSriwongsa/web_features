@@ -10,13 +10,98 @@ body{
     background:url(bg.jpg) no-repeat;
     background-size: cover;
 }
-.wrapper{
+.container{
     background-color: white;
     width: 33rem;
-    padding: 5rem 4rem;
+    padding: 5rem 5rem;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     border-radius: 1rem;
+}
+#userinput{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    outline: none;
+    padding: 0.5rem 1rem;
+}
+.choices{
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+}
+select{
+    border: none;
+    width: 7rem;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    background-color: lightgrey;
+}
+select::-ms-expand{
+    display: none;
+}
+select option{
+    background-color: aliceblue;
+    color: black;
+}
+.selected{
+    display: none;
+}
+.color-input{
+    appearance: none;
+    background-color: transparent;
+    width: 3rem;
+    height: 3rem;
+    outline: none;
+    border: none;
+}
+.color-input::-webkit-color-swatch{
+    border-radius: 0.5rem;
+    border: 0.1rem solid black;
+}
+.color-input::-moz-color-swatch{
+    border-radius: 0.5rem;
+    border: 0.1rem solid black;
+}
+.qr-code-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+.qr-code-btn button{
+    padding: 0.5rem 1rem;
+    border: none;
+    font-weight: 600;
+    color: aliceblue;
+    background-color: black;
+    cursor: pointer;
+}
+.qr-code-btn button:hover{
+    color: aliceblue;
+    background-color: rgb(66, 66, 66);  
+}
+.qr-code-btn a{
+    color: black;
+    background: lightgray;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+.qr-code-btn a:hover{
+    color: rgb(66, 66, 66);
+}
+.qr-code-btn:disabled{
+    background-color: transparent;
+    color: gray;
+    border: 0.2rem solid gray;
+}
+.box-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }
