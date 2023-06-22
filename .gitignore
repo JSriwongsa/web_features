@@ -1,4 +1,6 @@
 weather_app/images/*
 quiz_app/images/*
 memory_game/images/*
-qr_code_generator/icon.png
+qr_code_generator/*.png
+qr_code_generator/*.jpg
+
