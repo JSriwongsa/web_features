@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+    <div class="progress-bar">
+        <span class="progress-value">0%</span>
+    </div>
+    <span class="text">Progress</span>
+   </div>
+
+   <script>
+    let progressBar = document.querySelector('.progress-bar');
+    let progressValue = document.querySelector('.progress-value');
+
+    let progressStart = 0, progressEnd = 90, speed = 20;
+
+    let progress = setInterval(() => {
+        progressStart++;
+        progressValue.textContent = `${progressStart}%`
+        progressBar.style.background = `conic-gradient(red ${progressStart * 3.6}deg, lightgray 0deg)`
+
+        if(progressStart == progressEnd){
+            clearInterval(progress);
+        }
+    }, speed)
+
+   </script>
+</body>
+</html>
