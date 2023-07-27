@@ -70,7 +70,8 @@ background: #eddcd2;
     margin: 10px 0 5px;
     font-size: 14px;
     font-weight: 600;
-    color: #d3ab9e;
+    text-transform: uppercase;
+    color: #d3ab9e;  
 }
 
 
